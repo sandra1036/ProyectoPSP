@@ -34,18 +34,16 @@ public class Controller implements Initializable {
 
     Controller cr;
 
-    @FXML private void llamarventana() throws IOException {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    public void Click(javafx.event.ActionEvent actionEvent) throws IOException {
+        System.out.println("me cago en tu puta madre");
         Stage stage= new Stage();
         FXMLLoader loader=new FXMLLoader();
         AnchorPane root=(AnchorPane)loader.load(getClass().getResource("recibido.fxml").openStream());
         cr=(Controller)loader.getController();
-    }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        try {
-            llamarventana();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
