@@ -1,6 +1,7 @@
 package sample;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -32,18 +33,16 @@ public class Controller implements Initializable {
 
     @FXML private Button button;
 
-    Controller cr;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
+    //Este boton pasa a la pantalla donde muestro el mensaje
     public void Click(javafx.event.ActionEvent actionEvent) throws IOException {
-        System.out.println("me cago en tu puta madre");
         Stage stage= new Stage();
-        FXMLLoader loader=new FXMLLoader();
-        AnchorPane root=(AnchorPane)loader.load(getClass().getResource("recibido.fxml").openStream());
-        cr=(Controller)loader.getController();
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("recibido.fxml"));
+        Parent root=(Parent)loader.load();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }
