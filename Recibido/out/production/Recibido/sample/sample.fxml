@@ -12,7 +12,7 @@
             <TableColumn id="colEmail" prefWidth="89.0" text="Email" />
          </columns>
       </TableView>
-      <Button id="Botoncrear" fx:id="botoncrear" mnemonicParsing="false" text="Crear" GridPane.rowIndex="1" />
+      <Button id="Botoncrear" fx:id="botoncrear" mnemonicParsing="false"  text="Crear" GridPane.rowIndex="1" />
    </children>
    <columnConstraints>
       <ColumnConstraints />
