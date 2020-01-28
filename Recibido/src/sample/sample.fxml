@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="293.0" prefWidth="237.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView prefHeight="296.0" prefWidth="405.0">
+         <columns>
+            <TableColumn id="colAsunto" prefWidth="75.0" text="Asunto" />
+            <TableColumn id="colNombre" prefWidth="75.0" text="Nombre" />
+            <TableColumn id="colEmail" prefWidth="89.0" text="Email" />
+         </columns>
+      </TableView>
+      <Button id="Botoncrear" fx:id="botoncrear" mnemonicParsing="false" text="Crear" GridPane.rowIndex="1" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
