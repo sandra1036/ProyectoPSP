@@ -35,8 +35,12 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        firstcolumn.setText("");
+        namecolumn.setText("");
+        Emailcolumn.setText("");
 
     }
+
     //Este boton pasa a la pantalla donde muestro el mensaje
     public void Click(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage= new Stage();
