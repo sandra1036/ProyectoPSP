@@ -38,7 +38,6 @@ public class Controller implements Initializable {
 
 
     }
-
     //Este boton pasa a la pantalla donde muestro el mensaje
     public void Click(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage stage= new Stage();
