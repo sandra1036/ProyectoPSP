@@ -1,5 +1,7 @@
 package sample;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -32,10 +34,14 @@ public class Controller implements Initializable {
     TableColumn<Email, String> Emailcolumn;
 
     @FXML private Button button;
+    @FXML
+    ObservableList<Email> email= FXCollections.observableArrayList(
+            new Email("gracias","gracias","no aprobamos ni de coña")
+    );
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        tableView.setItems(email);
 
     }
     //Este boton pasa a la pantalla donde muestro el mensaje

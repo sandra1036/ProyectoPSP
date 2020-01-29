@@ -1,23 +1,44 @@
 package sample.Objetos;
 
-public class Email {
-    public String asunto;
-    public String origen;
-    public String[] destino;
-    public String contenido;
+import javafx.beans.property.SimpleStringProperty;
 
-    public Email(String asunto, String origen, String[] destino, String contenido) {
-        this.asunto = asunto;
-        this.origen = origen;
-        this.destino = destino;
-        this.contenido = contenido;
+public class Email {
+    public SimpleStringProperty asunto;
+    public String origen;
+    public SimpleStringProperty destino;
+    public SimpleStringProperty contenido;
+
+    public String usuario;
+
+    public String getUsuario() {
+        return usuario;
     }
 
-    public String getAsunto() {
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public  String contrasena;
+    public Email(String asunto, String origen, String destino, String contenido) {
+        this.asunto =new SimpleStringProperty(asunto);
+        this.origen = origen;
+        this.destino =new SimpleStringProperty(destino);
+        this.contenido =new SimpleStringProperty(contenido);
+    }
+
+    public SimpleStringProperty getAsunto() {
         return asunto;
     }
 
-    public void setAsunto(String asunto) {
+    public void setAsunto(SimpleStringProperty asunto) {
         this.asunto = asunto;
     }
 
@@ -29,19 +50,19 @@ public class Email {
         this.origen = origen;
     }
 
-    public String[] getDestino() {
+    public SimpleStringProperty getDestino() {
         return destino;
     }
 
-    public void setDestino(String[] destino) {
+    public void setDestino(SimpleStringProperty destino) {
         this.destino = destino;
     }
 
-    public String getContenido() {
+    public SimpleStringProperty getContenido() {
         return contenido;
     }
 
-    public void setContenido(String contenido) {
+    public void setContenido(SimpleStringProperty contenido) {
         this.contenido = contenido;
     }
 
