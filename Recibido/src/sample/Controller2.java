@@ -42,14 +42,12 @@ public class Controller2 implements Initializable {
     }
 
     public void ClickEn(javafx.event.ActionEvent actionEvent) throws IOException, MessagingException {
-//        Email email=new Email("nada","sanoro@alu.iesserpis.org","sandraromero262@gmail.com","nadie hace nada");
-//        email.setContrasena("hola");
+//        Email email=new Email("nada","sanoro@alu.iesserpis.org","sandraromero262@gmail.com","");
 //        email.setUsuario("sanoro@aluiesserpis.org");
 //        email.setAsunto(textFieldasu.getText());
 //        email.setContenido(mensaje.getText());
 //        email.setDestino(textFielddes.getText().trim());
 //        enviarcorreo();
-
 
         enviarcorreo();
 
@@ -82,7 +80,7 @@ public boolean enviarcorreo() throws MessagingException {
         mensaje.setContent(mimeMessage);
     System.out.println(mensaje);
     Transport t=session.getTransport("smtp");
-      //aqui conecta con el gmail del destino con el del origen  t.connect();
+      //aqui conecta con el gmail del destino con el origen  t.connect();
         t.sendMessage(mensaje,mensaje.getAllRecipients());
         t.close();
     return false;

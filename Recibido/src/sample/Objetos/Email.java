@@ -8,25 +8,8 @@ public class Email {
     public SimpleStringProperty destino;
     public SimpleStringProperty contenido;
 
-    public String usuario;
 
-    public String getUsuario() {
-        return usuario;
-    }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
-
-    public  String contrasena;
     public Email(String asunto, String origen, String destino, String contenido) {
         this.asunto =new SimpleStringProperty(asunto);
         this.origen = origen;

@@ -34,14 +34,11 @@ public class Controller implements Initializable {
     TableColumn<Email, String> Emailcolumn;
 
     @FXML private Button button;
-    @FXML
-    ObservableList<Email> email= FXCollections.observableArrayList(
-            new Email("gracias","gracias","no aprobamos ni de coña")
-    );
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        tableView.setItems(email);
+        tableView.setItems(Controller2.);
 
     }
     //Este boton pasa a la pantalla donde muestro el mensaje
