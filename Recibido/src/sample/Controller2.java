@@ -35,10 +35,7 @@ public class Controller2 implements Initializable {
     }
 
     public void ClickEn(javafx.event.ActionEvent actionEvent) throws IOException {
-        ServidorTCP servidorTCP=new ServidorTCP();
-        ClienteTCP clienteTCP=new ClienteTCP();
-        System.out.println(servidorTCP.toString());
-        System.out.println(clienteTCP.toString());
+
 
     }
 
