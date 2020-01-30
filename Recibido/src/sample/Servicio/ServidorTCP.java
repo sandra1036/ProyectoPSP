@@ -1,8 +1,8 @@
 package sample.Servicio;
 
-import java.io.DataInputStream;
-import java.io.EOFException;
-import java.io.IOException;
+import sample.Objetos.Email;
+
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -15,15 +15,15 @@ public class ServidorTCP {
         //Esperamos a que el cliente conecte
         Socket socket = servidor.accept();
         System.out.println("RECIBIENDO DEL CLIENTE...");
-        DataInputStream in = new DataInputStream(socket.getInputStream());
+        ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 
         try {
             do {
                 //Leo el mensaje que me envia el cliente
-                String mensaje = in.readUTF();
-                System.out.println(mensaje);
+                Email mensaje = (Email) in.readObject();
+                System.out.println(mensaje.toString());
             } while (!servidor.isClosed());
-        } catch (EOFException e) {
+        } catch (EOFException | ClassNotFoundException e) {
             System.out.println("FIN DE LA COMUNICACIÓN");
         }
 

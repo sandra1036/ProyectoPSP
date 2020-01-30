@@ -1,5 +1,7 @@
 package sample.Servicio;
 
+import sample.Objetos.Email;
+
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -13,6 +15,7 @@ public class ClienteTCP {
             Scanner sc = new Scanner(System.in);
             do {
                 //Escribe el mensaje
+                out.writeObject(new Email("oatata", "127.0.0.1", "127.0.0.1", "patata"));
                 out.writeUTF("\t" + sc.nextLine() + "\n");
                 System.out.println(out);
             } while (socket.isConnected());

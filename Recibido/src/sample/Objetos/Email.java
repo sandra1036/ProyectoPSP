@@ -2,26 +2,26 @@ package sample.Objetos;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class Email {
-    public SimpleStringProperty asunto;
+import java.io.Serializable;
+
+public class Email implements Serializable {
+    public String asunto;
     public String origen;
-    public SimpleStringProperty destino;
-    public SimpleStringProperty contenido;
-
-
+    public String destino;
+    public String contenido;
 
     public Email(String asunto, String origen, String destino, String contenido) {
-        this.asunto =new SimpleStringProperty(asunto);
+        this.asunto =asunto;
         this.origen = origen;
-        this.destino =new SimpleStringProperty(destino);
-        this.contenido =new SimpleStringProperty(contenido);
+        this.destino = destino;
+        this.contenido =contenido;
     }
 
-    public SimpleStringProperty getAsunto() {
+    public String getAsunto() {
         return asunto;
     }
 
-    public void setAsunto(SimpleStringProperty asunto) {
+    public void setAsunto(String asunto) {
         this.asunto = asunto;
     }
 
@@ -33,19 +33,19 @@ public class Email {
         this.origen = origen;
     }
 
-    public SimpleStringProperty getDestino() {
+    public String getDestino() {
         return destino;
     }
 
-    public void setDestino(SimpleStringProperty destino) {
+    public void setDestino(String destino) {
         this.destino = destino;
     }
 
-    public SimpleStringProperty getContenido() {
+    public String getContenido() {
         return contenido;
     }
 
-    public void setContenido(SimpleStringProperty contenido) {
+    public void setContenido(String contenido) {
         this.contenido = contenido;
     }
 
