@@ -40,34 +40,30 @@ public class Controller2 {
     private Button enviar;
 
     public void ClickEn(javafx.event.ActionEvent actionEvent) throws IOException, MessagingException, InvocationTargetException {
-//        Email email=new Email("nada","sanoro@alu.iesserpis.org","sandraromero262@gmail.com","");
-//        email.setUsuario("sanoro@aluiesserpis.org");
-//        email.setAsunto(textFieldasu.getText());
-//        email.setContenido(mensaje.getText());
-//        email.setDestino(textFielddes.getText().trim());
-//        enviarcorreo();
-
           enviarcorreo();
     }
 
 
 
     public boolean enviarcorreo() throws MessagingException, InvocationTargetException {
+
+        //Esto es lo que hace que se conecte con el gmail
             Properties p = new Properties();
             p.put("mail.smtp.host", "smtp.gmail.com");
             p.setProperty("mail.smtp.starttls.enable", "true");
+            //El puerto que se identifica con el SMTP
             p.setProperty("mail.smtp.port", "587");
             p.setProperty("mail.smtp.socketFectory.port", "587");
             p.setProperty("mail.smtp.user", "programacionprocesos2@gmail.com");
-
             p.setProperty("mail.smtp.auth", "true");
+
 
             Session session = Session.getDefaultInstance(p, null);
             MimeBodyPart texto = new MimeBodyPart();
 
+            //Creamos un email el cual le pasaremos el asunto el destino y el mensaje
             Email email = new Email(textFieldasu.getText(), "127.0.0.1", textFielddes.getText(), mensaje.getText());
-
-
+            //Escribe el mensaje
             texto.setText(email.getContenido());
 
             MimeMultipart mimeMessage = new MimeMultipart();
@@ -87,7 +83,7 @@ public class Controller2 {
             System.out.println(mensaje);
             //Protocolo de transpote
             Transport t = session.getTransport("smtp");
-            //aqui conecta con el gmail del destino con el origen
+            //aqui conecta con el gmail
             t.connect(Controller.user, Controller.pass);
             //envia el mensaje
             t.sendMessage(mensaje, mensaje.getAllRecipients());

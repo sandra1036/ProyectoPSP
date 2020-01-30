@@ -57,12 +57,15 @@ public class Controller implements Initializable {
         Session session = Session.getDefaultInstance(p, null);
 
         Transport t = session.getTransport("smtp");
-
+        //Coge el usuario y la contraseña
         user = usuario.getUsuario();
         pass = usuario.getPassword();
 
+
         try {
+            //Si existe se conecta con el servidor
             t.connect(user, pass);
+            //Esto es lo que hace que pase a la 2 pantalla
             Stage stage= new Stage();
             FXMLLoader loader=new FXMLLoader(getClass().getResource("recibido.fxml"));
             Parent root=(Parent)loader.load();
