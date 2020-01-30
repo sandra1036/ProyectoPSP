@@ -35,6 +35,9 @@ public class Controller implements Initializable {
 
     @FXML private Button button;
 
+    public static Usuario usuario;
+    public static String user;
+    public static String pass;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -43,7 +46,7 @@ public class Controller implements Initializable {
     }
     //Este boton pasa a la pantalla donde muestro el mensaje
     public void Click(javafx.event.ActionEvent actionEvent) throws IOException, MessagingException {
-        Usuario usuario = new Usuario(textUsuario.getText(), textPassword.getText());
+        usuario = new Usuario(textUsuario.getText(), textPassword.getText());
         Properties p = new Properties();
         p.put("mail.smtp.host", "smtp.gmail.com");
         p.setProperty("mail.smtp.starttls.enable", "true");
@@ -54,14 +57,19 @@ public class Controller implements Initializable {
         Session session = Session.getDefaultInstance(p, null);
 
         Transport t = session.getTransport("smtp");
-        if (t.connect(Añade usuario, Añade contraseña)) {
+
+        user = usuario.getUsuario();
+        pass = usuario.getPassword();
+
+        try {
+            t.connect(user, pass);
             Stage stage= new Stage();
             FXMLLoader loader=new FXMLLoader(getClass().getResource("recibido.fxml"));
             Parent root=(Parent)loader.load();
             stage.setScene(new Scene(root));
             stage.show();
         }
-        else {
+        catch (Exception e) {
             Alert a = new Alert(Alert.AlertType.NONE);
             a.setAlertType(Alert.AlertType.ERROR);
             a.setContentText("No se ha podido identificar");

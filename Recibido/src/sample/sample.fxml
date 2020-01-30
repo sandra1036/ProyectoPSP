@@ -9,7 +9,7 @@
       <Label text="Usuario" />
       <TextField id="textUsuario" fx:id="textUsuario" GridPane.columnIndex="1" />
       <Label text="Contraseña" GridPane.rowIndex="1" />
-      <TextField id="textpasword" fx:id="textPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <PasswordField id="textpasword" fx:id="textPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
    </children>
    <columnConstraints>
       <ColumnConstraints />

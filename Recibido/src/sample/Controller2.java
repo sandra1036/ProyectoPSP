@@ -74,14 +74,22 @@ public class Controller2 {
             mimeMessage.addBodyPart(texto);
 
             MimeMessage mensaje = new MimeMessage(session);
-            mensaje.setFrom(new InternetAddress("programacionprocesos2@gmail.com"));
-            mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress("sanoro@alu.iesserpis.org"));
+            //El origen del correo
+            mensaje.setFrom(new InternetAddress(Controller.user));
+
+            //Destinatario del correo
+            mensaje.addRecipient(Message.RecipientType.TO, new InternetAddress(textFielddes.getText()));
+            //Coge el asunto
             mensaje.setSubject(email.getAsunto());
+            //Coge el mensaje
             mensaje.setContent(mimeMessage);
+            //Muestra que se ha enviado el mensaje
             System.out.println(mensaje);
+            //Protocolo de transpote
             Transport t = session.getTransport("smtp");
             //aqui conecta con el gmail del destino con el origen
-            t.connect("programacionprocesos2@gmail.com", "psp2020*");
+            t.connect(Controller.user, Controller.pass);
+            //envia el mensaje
             t.sendMessage(mensaje, mensaje.getAllRecipients());
             t.close();
             return true;
