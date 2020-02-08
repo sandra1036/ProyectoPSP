@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Recibido:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Recibido_jar</output-path>
+    <root id="archive" name="Recibido.jar">
+      <element id="module-output" name="Recibido" />
+      <element id="library" level="project" name="mail1" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/mail.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Recibido">
+    <output-path>$PROJECT_DIR$/out/artifacts/Recibido</output-path>
+    <root id="root">
+      <element id="archive" name="Recibido.jar">
+        <element id="module-output" name="Recibido" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
